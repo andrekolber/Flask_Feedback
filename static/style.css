@@ -1,0 +1,42 @@
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+ul {
+    text-align: center;
+}
+
+.user-info li {
+    list-style-type: none;
+    padding-top: 1rem;
+    padding-right: 2.5rem;
+}
+
+.user-feedback li {
+    list-style-position: inside;
+    padding-top: 1rem;
+    padding-right: 2.5rem;
+}
+
+.feedback {
+    font-size: 1rem;
+}
+
+#delete-account {
+    text-align: center;
+}
+
+#add-feedback {
+    text-align: center;
+}
+
+.add-feedback {
+    text-align: center;
+}
+
+.delete-feedback {
+    display: inline;
+}
