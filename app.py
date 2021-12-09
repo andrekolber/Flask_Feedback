@@ -3,13 +3,17 @@ from flask_debugtoolbar import DebugToolbarExtension
 from wtforms.validators import Email
 from models import connect_db, db, User, Feedback
 from forms import UserSignUpForm, UserLoginForm, UserFeedbackForm
+import os
 
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///flask_feedback_db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get(
+    'DATABASE_URL', 'postgresql:///flask_feedback_db')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_ECHO"] = True
-app.config["SECRET_KEY"] = "abc123"
+app.config["SECRET_KEY"] = os.environ.get('SECRET_KEY', 'hellosecret1')
+print('***************************')
+print('app.config["SECRET_KEY"]')
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 
